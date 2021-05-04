@@ -58,6 +58,11 @@ RSpec.describe Note, type: :model do
         expect(Note.search("message")).to be_empty
       end
     end
+  end
 
+  it "generates associated data from a factory" do
+    note = FactoryBot.create(:note)
+    puts "This note's project is #{note.project.inspect}"
+    puts "This note's user is #{note.user.inspect}"
   end
 end
